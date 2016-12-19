@@ -1,0 +1,13 @@
+/*
+Primary Colors: #05BACB
+*/
+
+.pie-chart{
+  display: inline-block;
+  height: 230px;
+  width: 230px;
+}
+
+.pie-label{
+  border: 2px solid black;
+}
