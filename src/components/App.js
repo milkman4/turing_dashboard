@@ -5,6 +5,10 @@ import {fakeEnrollData} from '../fakeData/fakeEnrollmentData.js'
 import Enrollment from './Enrollment.js'
 
 class App extends Component {
+  //componentDidMount(){
+    //hit API
+    //save data from enroll
+  //}
   render() {
     console.log(fakeEnrollData);
     return (
