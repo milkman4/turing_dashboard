@@ -13,7 +13,7 @@ const Root = ()=>{
       <div>
         <Nav />
         <Match exactly pattern="/" component={App} />
-        <Match exactly pattern="/enrollments" component={Enrollment}/>
+        <Match exactly pattern="/availability" component={Enrollment}/>
         {/* <Miss component = {NotFound} /> */}
       </div>
     </BrowserRouter>

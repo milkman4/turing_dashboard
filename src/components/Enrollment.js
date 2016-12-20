@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
-import {VictoryPie} from 'victory';
 import EnrollmentPie from './EnrollmentPie.js'
+import {fakeEnrollData} from '../fakeData/fakeEnrollmentData.js'
 
 class Enrollment extends Component {
   constructor(props) {
   super(props);
-  console.log(props);
     this.state =  {
-        data: props.data
+        data: fakeEnrollData
     };
   }
+  //componentDidMount(){
+    //hit API
+    //save data from enroll
+  //}
   addStudent(){
     console.log(this.state.data);
     // let newState = [{

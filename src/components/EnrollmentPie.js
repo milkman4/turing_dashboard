@@ -10,8 +10,6 @@ class EnrollmentPie extends Component {
     };
   }
   render() {
-    console.log("omg rerender!!!");
-
     return (
         <div className="pie-chart">
           <VictoryPie
@@ -20,8 +18,8 @@ class EnrollmentPie extends Component {
             x="label"
             y="count"
             padding={50}
-            innerRadius = {60}
-            style= {{
+            innerRadius={60}
+            style={{
               data: {
                 fill: (d) => {
                   return d.x == 1 ? "#05BACB" : "lightgrey"
@@ -32,9 +30,9 @@ class EnrollmentPie extends Component {
               },
               }
             }
-            animate = {
+            animate={
               {
-                duration: 1000,
+                duration: 500,
                 easing: "poly",
               }
             }
