@@ -13,6 +13,7 @@ const Root = ()=>{
   return (
     <BrowserRouter>
       <div>
+        <h1>WOOOOOOO!!!!!!!!!! im on the internet</h1>
         <Header />
         <Nav />
         <main>
