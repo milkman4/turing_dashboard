@@ -1,44 +1,44 @@
 export const fakeEnrollData = [
   {
-    cohortID: "1701",
-    startDate: "2017-01-23",
-    feorbe: "FE",
-    totalRequired: 28,
-    totalEnrolled: 25
+    section_name: "1701",
+    start_date: "2017-01-23",
+    program_id: 2,
+    total_required: 28,
+    total_enrolled: 1
   },
   {
-    cohortID: "1701",
-    startDate: "2017-01-23",
-    feorbe: "BE",
-    totalRequired: 28,
-    totalEnrolled: 22
+    section_name: "1701",
+    start_date: "2017-01-23",
+    program_id: 1,
+    total_required: 28,
+    total_enrolled: 1
   },
   {
-    cohortID: "1703",
-    startDate: "2017-03-04",
-    feorbe: "FE",
-    totalRequired: 28,
-    totalEnrolled: 6
+    section_name: "1703",
+    start_date: "2017-03-04",
+    program_id: 2,
+    total_required: 28,
+    total_enrolled: 1
   },
   {
-    cohortID: "1703",
-    startDate: "2017-03-04",
-    feorbe: "BE",
-    totalRequired: 28,
-    totalEnrolled: 7
+    section_name: "1703",
+    start_date: "2017-03-04",
+    program_id: 1,
+    total_required: 28,
+    total_enrolled: 1
   },
   {
-    cohortID: "1704",
-    startDate: "2017-04-26",
-    feorbe: "FE",
-    totalRequired: 28,
-    totalEnrolled: 2
+    section_name: "1704",
+    start_date: "2017-04-26",
+    program_id: 2,
+    total_required: 28,
+    total_enrolled: 1
   },
   {
-    cohortID: "1704",
-    startDate: "2017-04-26",
-    feorbe: "BE",
-    totalRequired: 28,
-    totalEnrolled: 1
+    section_name: "1704",
+    start_date: "2017-04-26",
+    program_id: 1,
+    total_required: 28,
+    total_enrolled: 1
   }
 ]

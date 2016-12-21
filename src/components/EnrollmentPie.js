@@ -13,7 +13,7 @@ class EnrollmentPie extends Component {
     return (
         <div className="pie-chart">
           <VictoryPie
-            data={this.props.data}
+            data={this.props.data.counts}
             height={400}
             x="label"
             y="count"
@@ -36,35 +36,13 @@ class EnrollmentPie extends Component {
                 easing: "poly",
               }
             }
-            // events={[
-            //   {
-            //     target: "data",
-            //     eventHandlers: {
-            //       onMouseOver: () => {
-            //         return [{
-            //           mutation: (props) => {
-            //             console.log(props);
-            //
-            //             return {
-            //               style: Object.assign({}, props.style, {fill: "tomato", lastFill: props.style.fill})
-            //             }
-            //           }
-            //         }];
-            //       },
-            //       onMouseOut: () => {
-            //         return [{
-            //           mutation: (props) =>{
-            //             return {
-            //               style: Object.assign({}, props.style, {fill: props.style.lastFill})
-            //             }
-            //           }
-            //         }]
-            //       }
-            //     }
-            //   }
-            // ]}
             labelComponent = {<PieLabel/>}
           />
+          <div>
+            <p>{this.props.data.cohort}</p>
+            <p>{this.props.data.programID}</p>
+            <p>Start Date: {this.props.data.startDate}</p>
+          </div>
         </div>
     );
   }

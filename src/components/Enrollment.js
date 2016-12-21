@@ -15,13 +15,15 @@ class Enrollment extends Component {
       .then(response => response.json())
       .then(response =>{
         console.log(response);
+        this.setState({
+          data: response
+        })
       })
       .catch(error => {
         console.log('shiiit');
       })
   }
   addStudent(){
-    console.log(this.state.data);
     // let newState = [{
     //   cohortID: this.state.data[0].cohortID,
     //   startDate: this.state.data[0].startDate,
@@ -33,8 +35,8 @@ class Enrollment extends Component {
       return ({
         cohortID: cohort.cohortID,
         startDate: cohort.startDate,
-        totalRequired: cohort.totalRequired,
-        totalEnrolled: cohort.totalEnrolled + 1
+        totalRequired: cohort.total_required,
+        totalEnrolled: cohort.total_enrolled + 1
       })
     })
 
@@ -44,19 +46,24 @@ class Enrollment extends Component {
   }
   render() {
     let pieData = this.state.data.map((cohort)=>{
-      return [{
-          count: cohort.totalEnrolled,
-          label: `${cohort.totalEnrolled}`
+      return {
+        counts:[{
+          count: cohort.total_enrolled,
+          label: `${cohort.total_enrolled}`
         },
         {
-          count: cohort.totalRequired - cohort.totalEnrolled,
-          label: `${cohort.totalRequired - cohort.totalEnrolled}`
+          count: cohort.total_required - cohort.total_enrolled,
+          label: `${cohort.total_required - cohort.total_enrolled}`
         }
-      ]
+      ],
+      programID: cohort.program_id === 1 ? 'Back-end' : 'Front-End',
+      startDate: cohort.start_date,
+      cohort: cohort.section_name
+      }
     })
     return (
       <div className="enrollment-container">
-        <button onClick={()=>this.addStudent()}>Add Student</button>
+        {/* <button onClick={()=>this.addStudent()}>Add Student</button> */}
         <EnrollmentPie data={pieData[0]}/>
         <EnrollmentPie data={pieData[1]}/>
         <EnrollmentPie data={pieData[2]}/>

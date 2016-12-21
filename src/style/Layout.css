@@ -1,0 +1,15 @@
+.Navigation{
+  position: fixed;
+  width: 175px;
+  height: 100vh;
+  border-right: 2px solid lightGrey;
+}
+
+main{
+  margin-left: 175px;
+  height: 100vh;
+  width: auto;
+  position: relative;
+  overflow: auto;
+  z-index: 1;
+}
