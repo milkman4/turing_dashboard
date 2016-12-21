@@ -11,9 +11,8 @@ import {BrowserRouter, Match, Miss} from 'react-router'
 const Root = ()=>{
   console.log("WOO HOO =) heroku woo!!");
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/">
       <div>
-        <h1>WOOOOOOO!!!!!!!!!! im on the internet</h1>
         <Header />
         <Nav />
         <main>
