@@ -11,7 +11,7 @@ class Enrollment extends Component {
     };
   }
   componentDidMount(){
-    fetch('http://enroll-staging.turing.io/api/v1/cohorts/upcoming')
+    fetch('https://enroll-staging.turing.io/api/v1/cohorts/upcoming')
       .then(response => response.json())
       .then(response =>{
         console.log(response);
