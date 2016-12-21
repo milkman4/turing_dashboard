@@ -1,0 +1,10 @@
+header{
+  height: 50px;
+  border-bottom: 2px solid lightGrey;
+}
+
+h1{
+  padding-top: 15px;
+  font-size: 30px;
+  text-align: center;
+}

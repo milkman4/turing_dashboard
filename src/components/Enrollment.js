@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import EnrollmentPie from './EnrollmentPie.js'
 import {fakeEnrollData} from '../fakeData/fakeEnrollmentData.js'
 
+
 class Enrollment extends Component {
   constructor(props) {
   super(props);
@@ -9,10 +10,16 @@ class Enrollment extends Component {
         data: fakeEnrollData
     };
   }
-  //componentDidMount(){
-    //hit API
-    //save data from enroll
-  //}
+  componentDidMount(){
+    fetch('http://enroll-staging.turing.io/api/v1/cohorts/upcoming')
+      .then(response => response.json())
+      .then(response =>{
+        console.log(response);
+      })
+      .catch(error => {
+        console.log('shiiit');
+      })
+  }
   addStudent(){
     console.log(this.state.data);
     // let newState = [{
