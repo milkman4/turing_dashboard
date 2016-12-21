@@ -10,18 +10,16 @@ class EnrollmentPie extends Component {
     };
   }
   render() {
-    console.log("omg rerender!!!");
-
     return (
         <div className="pie-chart">
           <VictoryPie
-            data={this.props.data}
+            data={this.props.data.counts}
             height={400}
             x="label"
             y="count"
             padding={50}
-            innerRadius = {60}
-            style= {{
+            innerRadius={60}
+            style={{
               data: {
                 fill: (d) => {
                   return d.x == 1 ? "#05BACB" : "lightgrey"
@@ -32,41 +30,19 @@ class EnrollmentPie extends Component {
               },
               }
             }
-            animate = {
+            animate={
               {
-                duration: 1000,
+                duration: 500,
                 easing: "poly",
               }
             }
-            // events={[
-            //   {
-            //     target: "data",
-            //     eventHandlers: {
-            //       onMouseOver: () => {
-            //         return [{
-            //           mutation: (props) => {
-            //             console.log(props);
-            //
-            //             return {
-            //               style: Object.assign({}, props.style, {fill: "tomato", lastFill: props.style.fill})
-            //             }
-            //           }
-            //         }];
-            //       },
-            //       onMouseOut: () => {
-            //         return [{
-            //           mutation: (props) =>{
-            //             return {
-            //               style: Object.assign({}, props.style, {fill: props.style.lastFill})
-            //             }
-            //           }
-            //         }]
-            //       }
-            //     }
-            //   }
-            // ]}
             labelComponent = {<PieLabel/>}
           />
+          <div>
+            <p>{this.props.data.cohort}</p>
+            <p>{this.props.data.programID}</p>
+            <p>Start Date: {this.props.data.startDate}</p>
+          </div>
         </div>
     );
   }
