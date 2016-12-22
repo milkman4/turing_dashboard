@@ -1,0 +1,22 @@
+.turing-logo-link{
+  width: 100%;
+}
+
+.turing-logo{
+  margin: 20px auto 0px auto;
+  display: block;
+  width: 40%;
+}
+
+ul{
+  margin-top: 50px;
+}
+
+li{
+  margin: 20px;
+}
+
+li a{
+  color: white;
+  text-decoration: none;
+}

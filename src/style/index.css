@@ -2,6 +2,8 @@
 @import './Layout.css';
 @import './App.css';
 @import './Header.css';
+@import './Nav.css';
+@import './Landing.css';
 @import './Enrollment.css';
 
 body {
