@@ -2,7 +2,7 @@
   position: fixed;
   width: 175px;
   height: 100vh;
-  border-right: 2px solid lightGrey;
+  background: #FF93AB -webkit-gradient(linear, left top, left bottom, from(#056bcb), to(#05cb8d)) no-repeat;
 }
 
 main{

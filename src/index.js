@@ -2,6 +2,7 @@ import React from 'react';
 import {render} from 'react-dom';
 import App from './components/App';
 import Header from './components/Header';
+import Landing from './components/Landing.js';
 import Nav from './components/Nav';
 import Enrollment from './components/Enrollment';
 import './style/index.css';
@@ -13,10 +14,10 @@ const Root = ()=>{
   return (
     <BrowserRouter>
       <div>
-        <Header />
         <Nav />
         <main>
-          <Match exactly pattern="/" component={App} />
+          {/* <Header /> */}
+          <Match exactly pattern="/" component={Landing} />
           <Match exactly pattern="/enrollment" component={Enrollment}/>
           {/* <Miss component = {NotFound} /> */}
         </main>

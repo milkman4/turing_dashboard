@@ -1,0 +1,27 @@
+.Landing{
+  margin: 100px;
+}
+
+.landing-logo{
+  display: block;
+  margin: auto;
+  border-radius: 10px;
+  width: 250px;
+  padding: 10px;
+  background-color: darkGrey;
+}
+
+.landing-animation-appear {
+  opacity: 0.01;
+}
+
+.landing-animation-appear.landing-animation-appear-active {
+  opacity: 1;
+  transition: opacity 2000ms ease;
+}
+
+.Landing h2{
+  text-align: center;
+  margin: 20px;
+  font-size: 30px;
+}
