@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {VictoryPie} from 'victory';
+import {VictoryPie, VictoryLabel} from 'victory';
 import PieLabel from './PieLabel.js'
 
 class EnrollmentPie extends Component {
@@ -22,12 +22,12 @@ class EnrollmentPie extends Component {
             style={{
               data: {
                 fill: (d) => {
-                  return d.x == 1 ? "#05BACB" : "lightgrey"
+                  return d.x == 1 ? "#05BACB" : "darkgrey"
                   }
               },
               labels: {
-                fontSize: 12
-              },
+                padding: -55
+                }
               }
             }
             animate={
@@ -36,7 +36,20 @@ class EnrollmentPie extends Component {
                 easing: "poly",
               }
             }
-            labelComponent = {<PieLabel/>}
+            labelComponent =
+              {
+                <VictoryLabel
+                  text={(datum)=>{
+                    return Math.ceil(datum.y)
+                  }}
+                  style={{
+                    fontSize: "36px",
+                    fill:"white"
+                    }
+                  }
+                />
+              }
+            // labelComponent = {<PieLabel/>}
           />
           <div>
             <p>{this.props.data.cohort}</p>
