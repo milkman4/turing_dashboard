@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {VictoryPie} from 'victory';
+import {VictoryPie, VictoryLabel} from 'victory';
 import PieLabel from './PieLabel.js'
 
 class EnrollmentPie extends Component {
@@ -12,22 +12,24 @@ class EnrollmentPie extends Component {
   render() {
     return (
         <div className="pie-chart">
+          <p className="pie-title">{this.props.data.cohort} {this.props.data.programID}</p>
           <VictoryPie
+            className="pie-svg "
             data={this.props.data.counts}
             height={400}
             x="label"
             y="count"
-            padding={50}
-            innerRadius={60}
+            padding={30}
+            innerRadius={100}
             style={{
               data: {
                 fill: (d) => {
-                  return d.x == 1 ? "#05BACB" : "lightgrey"
+                  return d.x == 1 ? "#05BACB" : "darkgrey"
                   }
               },
               labels: {
-                fontSize: 12
-              },
+                padding: -55
+                }
               }
             }
             animate={
@@ -36,13 +38,22 @@ class EnrollmentPie extends Component {
                 easing: "poly",
               }
             }
-            labelComponent = {<PieLabel/>}
+            labelComponent =
+              {
+                <VictoryLabel
+                  text={(datum)=>{
+                    return Math.ceil(datum.y)
+                  }}
+                  style={{
+                    fontSize: "30px",
+                    fill:"white"
+                    }
+                  }
+                />
+              }
+            // labelComponent = {<PieLabel/>}
           />
-          <div>
-            <p>{this.props.data.cohort}</p>
-            <p>{this.props.data.programID}</p>
-            <p>Start Date: {this.props.data.startDate}</p>
-          </div>
+          <p className="pie-date">Start Date: {this.props.data.startDate}</p>
         </div>
     );
   }
