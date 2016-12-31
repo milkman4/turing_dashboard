@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import EnrollmentPie from './EnrollmentPie.js'
+import CohortContainer from './CohortContainer.js'
 import {fakeEnrollData} from '../fakeData/fakeEnrollmentData.js'
 
 
@@ -17,6 +17,7 @@ class Enrollment extends Component {
         console.log(response);
         this.setState({
           data: response
+          // data: fakeEnrollData
         })
       })
       .catch(error => {
@@ -49,20 +50,24 @@ class Enrollment extends Component {
           label: `${cohort.total_required - cohort.total_enrolled}`
         }
       ],
-      programID: cohort.program_id === 1 ? 'Back-end' : 'Front-End',
+      programID: cohort.program_id === 1 ? 'Back End' : 'Front End',
       startDate: cohort.start_date,
       cohort: cohort.section_name
       }
     })
     return (
-      <div className="enrollment-container">
-        {/* <button onClick={()=>this.addStudent()}>Add Student</button> */}
-        <EnrollmentPie data={pieData[0]}/>
-        <EnrollmentPie data={pieData[1]}/>
-        <EnrollmentPie data={pieData[2]}/>
-        <EnrollmentPie data={pieData[3]}/>
-        <EnrollmentPie data={pieData[4]}/>
-        <EnrollmentPie data={pieData[5]}/>
+      <div>
+        <div className="enrollment-key">
+          <div className="filled">Filled</div>
+          <div className="open">Open</div>
+        </div>
+      <div>
+        <div className="enrollment-container">
+          <CohortContainer cohort1={pieData[0]} cohort2={pieData[1]}/>
+          <CohortContainer cohort1={pieData[2]} cohort2={pieData[3]}/>
+          <CohortContainer cohort1={pieData[4]} cohort2={pieData[5]}/>
+        </div>
+      </div>
       </div>
     );
   }

@@ -1,14 +1,52 @@
+.enrollment-key{
+  width: 20%;
+  display: block;
+  margin: 10px auto 10px auto;
+  padding: 5px;
+}
+
+.filled{
+  width: 80%;
+  text-align: center;
+  margin: auto;
+  padding: 3px;
+  color: white;
+  background-color: #05BACB;
+}
+
+.open{
+  width: 80%;
+  text-align: center;
+  margin: auto;
+  padding: 3px;
+  color: white;
+  background-color: darkGrey;
+}
 .enrollment-container{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
+.enrollment-cohort-container{
+  border: solid lightGrey 1px;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 10px 10px 10px -6px #777;
+}
+
+
+.cohort-container-header{
+  display: block;
+  text-align: center;
+  font-size: 25px;
+  font-weight: bolder;
+}
+
 .pie-chart{
   margin: 10px;
   display: inline-block;
-  height: 275px;
-  width: 230px;
+  width: 200px;
 }
 
 .pie-title{
