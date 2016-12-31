@@ -5,6 +5,7 @@
 @import './Nav.css';
 @import './Landing.css';
 @import './Enrollment.css';
+@import './Mobile.css';
 
 body {
   font-family: 'Open Sans', sans-serif;
