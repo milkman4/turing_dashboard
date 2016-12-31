@@ -24,13 +24,6 @@ class Enrollment extends Component {
       })
   }
   addStudent(){
-    // let newState = [{
-    //   cohortID: this.state.data[0].cohortID,
-    //   startDate: this.state.data[0].startDate,
-    //   totalRequired: this.state.data[0].frontend.totalRequired,
-    //   totalEnrolled: this.state.data[0].frontend.totalEnrolled + 1,
-    //   }
-    // ]
     let newState = this.state.data.map((cohort)=>{
       return ({
         cohortID: cohort.cohortID,
