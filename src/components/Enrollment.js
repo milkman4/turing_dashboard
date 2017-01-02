@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CohortContainer from './CohortContainer.js'
 import {fakeEnrollData} from '../fakeData/fakeEnrollmentData.js'
-
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group' // ES6
 
 class Enrollment extends Component {
   constructor(props) {
@@ -16,8 +16,8 @@ class Enrollment extends Component {
       .then(response =>{
         console.log(response);
         this.setState({
-          data: response
-          // data: fakeEnrollData
+          // data: response
+          data: fakeEnrollData
         })
       })
       .catch(error => {
@@ -62,11 +62,16 @@ class Enrollment extends Component {
           <div className="open">Open</div>
         </div>
       <div>
-        <div className="enrollment-container">
-          <CohortContainer cohort1={pieData[0]} cohort2={pieData[1]}/>
-          <CohortContainer cohort1={pieData[2]} cohort2={pieData[3]}/>
-          <CohortContainer cohort1={pieData[4]} cohort2={pieData[5]}/>
-        </div>
+        <ReactCSSTransitionGroup
+        transitionName="landing-animation"
+        transitionAppear={true}
+        transitionAppearTimeout={2200}>
+          <div className="enrollment-container">
+            <CohortContainer cohort1={pieData[0]} cohort2={pieData[1]}/>
+            <CohortContainer cohort1={pieData[2]} cohort2={pieData[3]}/>
+            <CohortContainer cohort1={pieData[4]} cohort2={pieData[5]}/>
+          </div>
+        </ReactCSSTransitionGroup>
       </div>
       </div>
     );

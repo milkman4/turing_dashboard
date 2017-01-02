@@ -29,4 +29,12 @@
     margin-right: 10px;
   }
 
+  .cohort-container-header{
+    margin-bottom: 10px;
+  }
+  .pie-chart{
+    display: block;
+    margin: auto;
+  }
+
 }

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import EnrollmentPie from './EnrollmentPie.js'
 import {fakeEnrollData} from '../fakeData/fakeEnrollmentData.js'
 
-
 class CohortContainer extends Component {
   constructor(props) {
   super(props);
@@ -17,8 +16,9 @@ class CohortContainer extends Component {
         <h4 className="cohort-container-header">
           {this.props.cohort1.cohort}
         </h4>
-        <EnrollmentPie data={this.props.cohort1}/>
-        <EnrollmentPie data={this.props.cohort2}/>
+          <EnrollmentPie data={this.props.cohort1}/>
+          <EnrollmentPie data={this.props.cohort2}/>
+        <p className="pie-date">Start Date: {this.props.cohort1.startDate}</p>
       </div>
     )
   }
