@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import EnrollmentPie from './EnrollmentPie.js'
+import CohortContainer from './CohortContainer.js'
 import {fakeEnrollData} from '../fakeData/fakeEnrollmentData.js'
-
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group' // ES6
 
 class Enrollment extends Component {
   constructor(props) {
@@ -16,7 +16,8 @@ class Enrollment extends Component {
       .then(response =>{
         console.log(response);
         this.setState({
-          data: response
+          // data: response
+          data: fakeEnrollData
         })
       })
       .catch(error => {
@@ -24,13 +25,6 @@ class Enrollment extends Component {
       })
   }
   addStudent(){
-    // let newState = [{
-    //   cohortID: this.state.data[0].cohortID,
-    //   startDate: this.state.data[0].startDate,
-    //   totalRequired: this.state.data[0].frontend.totalRequired,
-    //   totalEnrolled: this.state.data[0].frontend.totalEnrolled + 1,
-    //   }
-    // ]
     let newState = this.state.data.map((cohort)=>{
       return ({
         cohortID: cohort.cohortID,
@@ -56,20 +50,29 @@ class Enrollment extends Component {
           label: `${cohort.total_required - cohort.total_enrolled}`
         }
       ],
-      programID: cohort.program_id === 1 ? 'Back-end' : 'Front-End',
+      programID: cohort.program_id === 1 ? 'Back End' : 'Front End',
       startDate: cohort.start_date,
       cohort: cohort.section_name
       }
     })
     return (
-      <div className="enrollment-container">
-        {/* <button onClick={()=>this.addStudent()}>Add Student</button> */}
-        <EnrollmentPie data={pieData[0]}/>
-        <EnrollmentPie data={pieData[1]}/>
-        <EnrollmentPie data={pieData[2]}/>
-        <EnrollmentPie data={pieData[3]}/>
-        <EnrollmentPie data={pieData[4]}/>
-        <EnrollmentPie data={pieData[5]}/>
+      <div>
+        <div className="enrollment-key">
+          <div className="filled">Filled</div>
+          <div className="open">Open</div>
+        </div>
+      <div>
+        <ReactCSSTransitionGroup
+        transitionName="landing-animation"
+        transitionAppear={true}
+        transitionAppearTimeout={2200}>
+          <div className="enrollment-container">
+            <CohortContainer cohort1={pieData[0]} cohort2={pieData[1]}/>
+            <CohortContainer cohort1={pieData[2]} cohort2={pieData[3]}/>
+            <CohortContainer cohort1={pieData[4]} cohort2={pieData[5]}/>
+          </div>
+        </ReactCSSTransitionGroup>
+      </div>
       </div>
     );
   }

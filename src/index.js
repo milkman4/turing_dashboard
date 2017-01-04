@@ -10,7 +10,6 @@ import './style/index.css';
 import {BrowserRouter, Match, Miss} from 'react-router'
 
 const Root = ()=>{
-  console.log("WOO HOO =) heroku woo!!");
   return (
     <BrowserRouter>
       <div>

@@ -12,15 +12,16 @@ class EnrollmentPie extends Component {
   render() {
     return (
         <div className="pie-chart">
-          <p className="pie-title">{this.props.data.cohort} {this.props.data.programID}</p>
+          <p className="pie-title">{this.props.data.programID}</p>
           <VictoryPie
             className="pie-svg "
             data={this.props.data.counts}
             height={400}
+            width={400}
             x="label"
             y="count"
             padding={30}
-            innerRadius={100}
+            innerRadius={90}
             style={{
               data: {
                 fill: (d) => {
@@ -53,7 +54,6 @@ class EnrollmentPie extends Component {
               }
             // labelComponent = {<PieLabel/>}
           />
-          <p className="pie-date">Start Date: {this.props.data.startDate}</p>
         </div>
     );
   }
