@@ -16,8 +16,8 @@ class Enrollment extends Component {
       .then(response =>{
         console.log(response);
         this.setState({
-          // data: response
-          data: fakeEnrollData
+          data: response
+          // data: fakeEnrollData
         })
       })
       .catch(error => {
