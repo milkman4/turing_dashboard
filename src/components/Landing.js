@@ -10,6 +10,8 @@ class Landing extends Component {
       <div className="Landing">
         <ReactCSSTransitionGroup
         transitionName="landing-animation"
+        transitionEnterTimeout={3000}
+        transitionLeaveTimeout={3000}
         transitionAppear={true}
         transitionAppearTimeout={2200}>
           <h2>Welcome to Dashboard.</h2>

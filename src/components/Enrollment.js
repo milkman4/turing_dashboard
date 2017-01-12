@@ -11,18 +11,24 @@ class Enrollment extends Component {
     };
   }
   componentDidMount(){
-    fetch('http://enroll-staging.turing.io/api/v1/cohorts/upcoming')
-      .then(response => response.json())
-      .then(response =>{
-        console.log(response);
-        this.setState({
-          data: response
-          // data: fakeEnrollData
+    if(!this.props.testing){
+      fetch('http://enroll-staging.turing.io/api/v1/cohorts/upcoming')
+        .then(response => response.json())
+        .then(response =>{
+          console.log(response);
+          this.setState({
+            data: response
+            // data: fakeEnrollData
+          })
         })
+        .catch(error => {
+          console.log('shiiit');
+        })
+    } else {
+      this.setState({
+        data: fakeEnrollData
       })
-      .catch(error => {
-        console.log('shiiit');
-      })
+    }
   }
   addStudent(){
     let newState = this.state.data.map((cohort)=>{
@@ -65,6 +71,8 @@ class Enrollment extends Component {
         <ReactCSSTransitionGroup
         transitionName="landing-animation"
         transitionAppear={true}
+        transitionEnterTimeout={3000}
+        transitionLeaveTimeout={3000}
         transitionAppearTimeout={2200}>
           <div className="enrollment-container">
             <CohortContainer cohort1={pieData[0]} cohort2={pieData[1]}/>

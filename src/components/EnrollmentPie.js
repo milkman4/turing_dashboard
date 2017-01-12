@@ -14,7 +14,7 @@ class EnrollmentPie extends Component {
         <div className="pie-chart">
           <p className="pie-title">{this.props.data.programID}</p>
           <VictoryPie
-            className="pie-svg "
+            className="pie-svg"
             data={this.props.data.counts}
             height={400}
             width={400}
@@ -42,6 +42,7 @@ class EnrollmentPie extends Component {
             labelComponent =
               {
                 <VictoryLabel
+                  className="pie-label"
                   text={(datum)=>{
                     return Math.ceil(datum.y)
                   }}
